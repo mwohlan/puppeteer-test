@@ -7,7 +7,7 @@
   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
 
 [functions]
-  external_node_modules = ["chrome-aws-lambda"]
+  external_node_modules = ["chrome-aws-lambda","puppeteer-core"]
 
 
 [[redirects]]
