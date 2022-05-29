@@ -1,11 +1,10 @@
-import puppeteer from 'puppeteer'
+import chromium from 'chrome-aws-lambda'
 
-let browser: puppeteer.Browser
-
+let browser
 export default defineEventHandler(async () => {
   console.time('puppeteer')
-
-  const browser = await launchBrowser()
+  if (!browser)
+    browser = await launchBrowser()
 
   const page = await browser.newPage()
   await page.goto('https://timelino.vercel.app/', { waitUntil: 'load' })
@@ -18,5 +17,11 @@ export default defineEventHandler(async () => {
 })
 
 async function launchBrowser() {
-  return await puppeteer.launch({ headless: true })
+  return await chromium.puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  })
 }

@@ -8,14 +8,16 @@ specifiers:
   '@pinia/nuxt': ^0.1.9
   '@unocss/nuxt': ^0.35.2
   '@vueuse/nuxt': ^8.5.0
+  chrome-aws-lambda: ^10.1.0
   eslint: ^8.16.0
   nuxt: npm:nuxt3@latest
   pinia: ^2.0.14
-  puppeteer: ^14.1.1
+  puppeteer-core: ^14.1.1
   typescript: ^4.7.2
 
 dependencies:
-  puppeteer: 14.1.1
+  chrome-aws-lambda: 10.1.0_puppeteer-core@14.1.1
+  puppeteer-core: 14.1.1
 
 devDependencies:
   '@antfu/eslint-config': 0.24.3_xztl6dhthcahlo6akmb2bmjmle
@@ -1949,6 +1951,16 @@ packages:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
     dev: true
+
+  /chrome-aws-lambda/10.1.0_puppeteer-core@14.1.1:
+    resolution: {integrity: sha512-NZQVf+J4kqG4sVhRm3WNmOfzY0OtTSm+S8rg77pwePa9RCYHzhnzRs8YvNI6L9tALIW6RpmefWiPURt3vURXcw==}
+    engines: {node: '>= 10.16'}
+    peerDependencies:
+      puppeteer-core: ^10.1.0
+    dependencies:
+      lambdafs: 2.1.1
+      puppeteer-core: 14.1.1
+    dev: false
 
   /ci-info/3.3.0:
     resolution: {integrity: sha512-riT/3vI5YpVH6/qomlDnJow6TBee2PBKSEpx3O32EGPYbWGIRsIlGRms3Sm74wYE1JMo8RnO04Hb12+v1J5ICw==}
@@ -4122,6 +4134,14 @@ packages:
     resolution: {integrity: sha512-lxpCM3HTvquGxKGzHeknB/sUjuVoUElLlfYnXZT73K8geR9jQbroGlSCFBax9/0mpGoD3kzcMLnOlGQPJJNyqQ==}
     dev: true
 
+  /lambdafs/2.1.1:
+    resolution: {integrity: sha512-x5k8JcoJWkWLvCVBzrl4pzvkEHSgSBqFjg3Dpsc4AcTMq7oUMym4cL/gRTZ6VM4mUMY+M0dIbQ+V1c1tsqqanQ==}
+    engines: {node: '>= 10.16'}
+    hasBin: true
+    dev: false
+    bundledDependencies:
+      - tar-fs
+
   /lazystream/1.0.1:
     resolution: {integrity: sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==}
     engines: {node: '>= 0.6.3'}
@@ -5525,10 +5545,9 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /puppeteer/14.1.1:
-    resolution: {integrity: sha512-4dC6GYR5YlXTmNO3TbYEHTdVSdml1cVD2Ok/h/f/xSTp4ITVdbRWkMjiOaEKRAhtIl6GqaP7B89zx+hfhcNGMQ==}
+  /puppeteer-core/14.1.1:
+    resolution: {integrity: sha512-DWLzFcawn1ANg2Q06Eieing4Y0fdNI7miax3f+wEbdROzlMG4yXIWzmT6XTKyFyqOjMhW5QNIDdFJftK6oP4og==}
     engines: {node: '>=14.1.0'}
-    requiresBuild: true
     dependencies:
       cross-fetch: 3.1.5
       debug: 4.3.4
