@@ -21,10 +21,11 @@ exports.handler = async function (event, context) {
 
 
     console.time("stringify")
-
+    
+    const data = pdf.toString('base64')
     const body = JSON.stringify({
           status: 'Ok',
-          pdf
+          data
     })
 
     console.timeEnd("stringify")
