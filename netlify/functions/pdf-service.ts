@@ -12,7 +12,154 @@ exports.handler = async function (event, context) {
 
   const page = await browser.newPage();
 
-   await page.setContent(`<main id="main" dark="bg-warm-gray-800 text-gray-200" class="h-screen w-screen text-gray-600 bg-warm-gray-100 overflow-x-hidden overflow-y-auto font-mulish"><div bg-gray-300="" py-1="" px-3="" rounded-md="" shadow-md="" cursor-pointer="" absolute="" right-4="" top-5="" gap-x-1="" flex="" items-center=""><div i-fe:logout=""></div><div>markuswohlan</div></div><span>(<i>light</i> mode detected)</span><!--v-if--><!--v-if--><!----><!--[--><div class="py-2 sm:py-5 flex justify-center overflow-hidden"><div container="" flex="" flex-col="" items-center=""><a text-2xl="" font-bold="" mb-2="" sm:mb-5="" download=""> Evaluations Overview </a><a mb-5="" font-bold="" download="" href="blob:http://localhost:3000/062595b1-a124-412f-b081-6f108a77010b" flex="" justify-center="" items-center="" min-w-35="" bg-gray-400="" px-4="" py-1="" rounded-lg=""><div> Download pdf </div></a><div class="flex items-center mb-3"><!--[--><div flex="" gap-x-3="" cursor-pointer=""><!--[--><div class="font-semibold text-gray-800" flex="" gap-x-1="" items-center="" px-3="" bg-gray-300="" rounded-lg=""><div>created</div><!----><div h-4="" w-4="" shrink="" i-octicon:sort-desc-16=""></div></div><div class="font-normal text-gray-600" flex="" gap-x-1="" items-center="" px-3="" bg-gray-300="" rounded-lg=""><div>fScore</div><!----><!----></div><!--]--></div><div ml-3="" cursor-pointer="" text-gray-700="" h-7="" w-7="" i-ic:outline-search=""></div><!----><!--]--></div><!----><ul flex="" gap-y-6="" flex-col="" max-w-3xl="" w-screen="" px-2="" sm:px-4=""><!--[--><div ring="" ring-gray-400="" sm:px-4="" px-2="" py-2="" shadow-md="" bg-white="" rounded-md=""><div flex="" justify-between=""><div text-gray-700="" font-semibold="" text-sm=""> Avg. fScore: 0.212</div><a href="/questionResult/TQfz5HZ3k0DfO2FJwzIc" class="" text-gray-600="" hover:text-gray-800="" flex="" items-center="" gap-x-2=""><div h-5="" w-5="" i-bi:folder-symlink=""></div><div text-sm="" font-semibold=""> Question Results </div></a></div><div mx-auto="" text-gray-600="" mt-1="" w-fit="" text-lg="" font-semibold=""> Training Config </div><li flex=""><table class="mt-1 flex-1 divide-y divide-gray-300 border-gray-300 border-2"><tbody class="bg-white"><!--[--><tr capitalize="" class="bg-gray-100"><td class="py-1 pl-4 pr-3 text-sm font-semibold text-gray-700 sm:pl-6">testFilter</td><td class="px-3 pl-4 text-right text-sm font-medium text-gray-700">[
+    await page.setContent(`
+    <style>
+   .i-bi\:folder-symlink,
+[i-bi\:folder-symlink=""]{--un-icon:url("data:image/svg+xml;utf8,%3Csvg preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cg fill='currentColor'%3E%3Cpath d='m11.798 8.271l-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z'/%3E%3Cpath d='m.5 3l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm.694 2.09A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09l-.636 7a1 1 0 0 1-.996.91H2.826a1 1 0 0 1-.995-.91l-.637-7zM6.172 2a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z'/%3E%3C/g%3E%3C/svg%3E");mask:var(--un-icon) no-repeat;mask-size:100% 100%;-webkit-mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;background-color:currentColor;width:1.2em;height:1.2em;}
+.i-eos-icons\:loading,
+[i-eos-icons\:loading=""]{--un-icon:url("data:image/svg+xml;utf8,%3Csvg preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z' opacity='.5'/%3E%3Cpath fill='currentColor' d='M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z'%3E%3CanimateTransform attributeName='transform' dur='1s' from='0 12 12' repeatCount='indefinite' to='360 12 12' type='rotate'/%3E%3C/path%3E%3C/svg%3E");mask:var(--un-icon) no-repeat;mask-size:100% 100%;-webkit-mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;background-color:currentColor;width:1.2em;height:1.2em;}
+.i-ic\:baseline-access-time,
+[i-ic\:baseline-access-time=""]{--un-icon:url("data:image/svg+xml;utf8,%3Csvg preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8z'/%3E%3Cpath fill='currentColor' d='M12.5 7H11v6l5.25 3.15l.75-1.23l-4.5-2.67z'/%3E%3C/svg%3E");mask:var(--un-icon) no-repeat;mask-size:100% 100%;-webkit-mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;background-color:currentColor;width:1.2em;height:1.2em;}
+/* layer: shortcuts */
+.container,
+[container=""]{max-width:100%;}
+@media (min-width: 640px){
+.container,
+[container=""]{max-width:640px;}
+}
+@media (min-width: 768px){
+.container,
+[container=""]{max-width:768px;}
+}
+@media (min-width: 1024px){
+.container,
+[container=""]{max-width:1024px;}
+}
+@media (min-width: 1280px){
+.container,
+[container=""]{max-width:1280px;}
+}
+@media (min-width: 1536px){
+.container,
+[container=""]{max-width:1536px;}
+}
+/* layer: default */
+.mx-auto,
+[mx-auto=""]{margin-left:auto;margin-right:auto;}
+.mb-2,
+[mb-2=""]{margin-bottom:0.5rem;}
+.mb-3{margin-bottom:0.75rem;}
+.mb-5,
+[mb-5=""]{margin-bottom:1.25rem;}
+.mt-1,
+[mt-1=""]{margin-top:0.25rem;}
+.mt-2,
+[mt-2=""]{margin-top:0.5rem;}
+.h-14,
+[h-14=""]{height:3.5rem;}
+.h-5,
+[h-5=""]{height:1.25rem;}
+.h24{height:6rem;}
+.max-w-3xl,
+[max-w-3xl=""]{max-width:48rem;}
+.min-w-35,
+[min-w-35=""]{min-width:8.75rem;}
+.w-14,
+[w-14=""]{width:3.5rem;}
+.w-5,
+[w-5=""]{width:1.25rem;}
+.w-fit,
+[w-fit=""]{width:fit-content;}
+.w-screen,
+[w-screen=""]{width:100vw;}
+.flex,
+[flex=""]{display:flex;}
+.flex-1{flex:1 1 0%;}
+.flex-col,
+[flex-col=""]{flex-direction:column;}
+[table=""]{display:table;}
+.translate-x-0{--un-translate-x:0rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.translate-x-20{--un-translate-x:5rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.items-center,
+[items-center=""]{align-items:center;}
+.self-center,
+[self-center=""]{align-self:center;}
+.justify-end{justify-content:flex-end;}
+.justify-center,
+[justify-center=""]{justify-content:center;}
+.justify-between,
+[justify-between=""]{justify-content:space-between;}
+.gap-x-1,
+[gap-x-1=""]{grid-column-gap:0.25rem;column-gap:0.25rem;}
+.gap-x-2,
+[gap-x-2=""]{grid-column-gap:0.5rem;column-gap:0.5rem;}
+.gap-y-6,
+[gap-y-6=""]{grid-row-gap:1.5rem;row-gap:1.5rem;}
+.divide-y>:not([hidden])~:not([hidden]){--un-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--un-divide-y-reverse)));border-bottom-width:calc(1px * var(--un-divide-y-reverse));}
+.divide-gray-300>:not([hidden])~:not([hidden]){--un-divide-opacity:1;border-color:rgba(209,213,219,var(--un-divide-opacity));}
+.overflow-hidden{overflow:hidden;}
+.whitespace-nowrap{white-space:nowrap;}
+.border-2{border-width:2px;border-style:solid;}
+.border-gray-300{--un-border-opacity:1;border-color:rgba(209,213,219,var(--un-border-opacity));}
+.rounded-lg,
+[rounded-lg=""]{border-radius:0.5rem;}
+.rounded-md,
+[rounded-md=""]{border-radius:0.375rem;}
+.bg-gray-100{--un-bg-opacity:1;background-color:rgba(243,244,246,var(--un-bg-opacity));}
+.bg-gray-400,
+[bg-gray-400=""]{--un-bg-opacity:1;background-color:rgba(156,163,175,var(--un-bg-opacity));}
+.bg-white,
+[bg-white=""]{--un-bg-opacity:1;background-color:rgba(255,255,255,var(--un-bg-opacity));}
+.px-2,
+[px-2=""]{padding-left:0.5rem;padding-right:0.5rem;}
+.px-3{padding-left:0.75rem;padding-right:0.75rem;}
+.px-4,
+[px-4=""]{padding-left:1rem;padding-right:1rem;}
+.py-1,
+[py-1=""]{padding-top:0.25rem;padding-bottom:0.25rem;}
+.py-2,
+[py-2=""]{padding-top:0.5rem;padding-bottom:0.5rem;}
+.pl-4{padding-left:1rem;}
+.pr-3{padding-right:0.75rem;}
+.text-right{text-align:right;}
+.text-2xl,
+[text-2xl=""]{font-size:1.5rem;line-height:2rem;}
+.text-lg,
+[text-lg=""]{font-size:1.125rem;line-height:1.75rem;}
+.text-sm,
+[text-sm=""]{font-size:0.875rem;line-height:1.25rem;}
+.font-bold,
+[font-bold=""]{font-weight:700;}
+.font-medium{font-weight:500;}
+.font-semibold,
+[font-semibold=""]{font-weight:600;}
+.capitalize,
+[capitalize=""]{text-transform:capitalize;}
+.hover\:text-gray-800:hover,
+[hover\:text-gray-800=""]:hover{--un-text-opacity:1;color:rgba(31,41,55,var(--un-text-opacity));}
+.text-gray-600,
+[text-gray-600=""]{--un-text-opacity:1;color:rgba(75,85,99,var(--un-text-opacity));}
+.text-gray-700,
+[text-gray-700=""]{--un-text-opacity:1;color:rgba(55,65,81,var(--un-text-opacity));}
+.op-0{opacity:0;}
+.op-100{opacity:1;}
+.shadow-md,
+[shadow-md=""]{--un-shadow:var(--un-shadow-inset) 0 4px 6px -1px var(--un-shadow-color, rgba(0,0,0,0.1)),var(--un-shadow-inset) 0 2px 4px -2px var(--un-shadow-color, rgba(0,0,0,0.1));box-shadow:var(--un-ring-offset-shadow, 0 0 #0000), var(--un-ring-shadow, 0 0 #0000), var(--un-shadow);}
+.ring,
+[ring=""]{--un-ring-width:1px;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow, 0 0 #0000);}
+.ring-gray-400,
+[ring-gray-400=""]{--un-ring-opacity:1;--un-ring-color:rgba(156,163,175,var(--un-ring-opacity));}
+.duration-200{transition-duration:200ms;}
+.duration-300{transition-duration:300ms;}
+@media (min-width: 640px){
+.sm\:mb-5,
+[sm\:mb-5=""]{margin-bottom:1.25rem;}
+.sm\:px-4,
+[sm\:px-4=""]{padding-left:1rem;padding-right:1rem;}
+.sm\:py-5{padding-top:1.25rem;padding-bottom:1.25rem;}
+.sm\:pl-6{padding-left:1.5rem;}
+}</style></head>
+    <main id="main" dark="bg-warm-gray-800 text-gray-200" class="h-screen w-screen text-gray-600 bg-warm-gray-100 overflow-x-hidden overflow-y-auto font-mulish"><div bg-gray-300="" py-1="" px-3="" rounded-md="" shadow-md="" cursor-pointer="" absolute="" right-4="" top-5="" gap-x-1="" flex="" items-center=""><div i-fe:logout=""></div><div>markuswohlan</div></div><span>(<i>light</i> mode detected)</span><!--v-if--><!--v-if--><!----><!--[--><div class="py-2 sm:py-5 flex justify-center overflow-hidden"><div container="" flex="" flex-col="" items-center=""><a text-2xl="" font-bold="" mb-2="" sm:mb-5="" download=""> Evaluations Overview </a><a mb-5="" font-bold="" download="" href="blob:http://localhost:3000/062595b1-a124-412f-b081-6f108a77010b" flex="" justify-center="" items-center="" min-w-35="" bg-gray-400="" px-4="" py-1="" rounded-lg=""><div> Download pdf </div></a><div class="flex items-center mb-3"><!--[--><div flex="" gap-x-3="" cursor-pointer=""><!--[--><div class="font-semibold text-gray-800" flex="" gap-x-1="" items-center="" px-3="" bg-gray-300="" rounded-lg=""><div>created</div><!----><div h-4="" w-4="" shrink="" i-octicon:sort-desc-16=""></div></div><div class="font-normal text-gray-600" flex="" gap-x-1="" items-center="" px-3="" bg-gray-300="" rounded-lg=""><div>fScore</div><!----><!----></div><!--]--></div><div ml-3="" cursor-pointer="" text-gray-700="" h-7="" w-7="" i-ic:outline-search=""></div><!----><!--]--></div><!----><ul flex="" gap-y-6="" flex-col="" max-w-3xl="" w-screen="" px-2="" sm:px-4=""><!--[--><div ring="" ring-gray-400="" sm:px-4="" px-2="" py-2="" shadow-md="" bg-white="" rounded-md=""><div flex="" justify-between=""><div text-gray-700="" font-semibold="" text-sm=""> Avg. fScore: 0.212</div><a href="/questionResult/TQfz5HZ3k0DfO2FJwzIc" class="" text-gray-600="" hover:text-gray-800="" flex="" items-center="" gap-x-2=""><div h-5="" w-5="" i-bi:folder-symlink=""></div><div text-sm="" font-semibold=""> Question Results </div></a></div><div mx-auto="" text-gray-600="" mt-1="" w-fit="" text-lg="" font-semibold=""> Training Config </div><li flex=""><table class="mt-1 flex-1 divide-y divide-gray-300 border-gray-300 border-2"><tbody class="bg-white"><!--[--><tr capitalize="" class="bg-gray-100"><td class="py-1 pl-4 pr-3 text-sm font-semibold text-gray-700 sm:pl-6">testFilter</td><td class="px-3 pl-4 text-right text-sm font-medium text-gray-700">[
   2,
   7,
   8,
