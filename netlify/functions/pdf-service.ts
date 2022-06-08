@@ -1,6 +1,7 @@
 
 import { Handler } from '@netlify/functions';
 const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
 exports.handler = async function(event, context) {
   const browser = await chromium.puppeteer.launch({
