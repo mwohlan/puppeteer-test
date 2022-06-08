@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@netlify/functions": "^1.0.0",
-    "chrome-aws-lambda": "^10.1.0",
+    "chrome-aws-lambda": "^2.1.1",
     "puppeteer-core": "^14.3.0"
   }
 }
