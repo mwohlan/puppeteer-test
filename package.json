@@ -1,28 +1,15 @@
 {
-  "private": true,
-  "packageManager": "pnpm@7.0.1",
+  "name": "my-puppeteer-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "nuxi build",
-    "dev": "nuxi dev",
-    "start": "node .output/server/index.mjs",
-    "lint": "eslint ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "@antfu/eslint-config": "^0.25.1",
-    "@iconify-json/carbon": "^1.1.4",
-    "@iconify-json/twemoji": "^1.1.4",
-    "@nuxtjs/color-mode": "^3.1.3",
-    "@pinia/nuxt": "^0.1.9",
-    "@unocss/nuxt": "^0.35.2",
-    "@vueuse/nuxt": "^8.6.0",
-    "eslint": "^8.17.0",
-    "nuxt": "npm:nuxt3@latest",
-    "pinia": "^2.0.14",
-    "typescript": "^4.7.3"
-  },
+  "author": "Markus Wohlan",
+  "license": "MIT",
   "dependencies": {
-    "@netlify/functions": "^1.0.0",
-    "chrome-aws-lambda": "^2.1.1",
+    "chrome-aws-lambda": "^10.1.0",
     "puppeteer-core": "^14.3.0"
   }
 }
