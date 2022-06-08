@@ -12,9 +12,7 @@ exports.handler = async function (event, context) {
 
   const page = await browser.newPage();
 
-   await page.setContent(`<body>
- <h1>An example static HTML to PDF</h1>
- </body>`)
+   await page.setContent('<body><h1>An example static HTML to PDF</h1></body>')
   const pdf = await page.pdf({ format: 'A4' })
 
     await page.close()
