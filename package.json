@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "start": "node .output/server/index.mjs",
+    "lint": "eslint ."
   },
   "author": "Markus Wohlan",
   "license": "MIT",
