@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "dependencies": {
     "chrome-aws-lambda": "10.1.0",
-    "puppeteer-core": "14.3.0"
+    "puppeteer-core": "10.1.0"
   },
   "devDependencies": {}
 }
