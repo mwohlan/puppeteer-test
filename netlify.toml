@@ -1,14 +1,4 @@
-[build.environment]
-  NPM_FLAGS = "--version"
-  NODE_VERSION = "16"
-
-[build]
-  publish = "dist"
 
 [functions]
   external_node_modules = ["chrome-aws-lambda","puppeteer-core"]
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
