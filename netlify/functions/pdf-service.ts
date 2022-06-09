@@ -15,11 +15,11 @@ exports.handler = async function (event, context) {
 
   const page = await browser.newPage();
 
+  await page.goto('https://timelino.vercel.app/', { waitUntil: 'load' })
    
   const pdf = await page.pdf({ format: 'a4' })
 
     await page.close()
-    await page.goto('https://timelino.vercel.app/', { waitUntil: 'load' })
     console.timeEnd('pdf-service');
 
 
