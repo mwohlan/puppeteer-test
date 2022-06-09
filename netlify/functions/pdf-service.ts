@@ -15,9 +15,18 @@ exports.handler = async function (event, context) {
 
   const page = await browser.newPage();
 
-  await page.goto('https://timelino.vercel.app/', { waitUntil: 'load' })
+  await page.goto('https://www.madewithsupabase.com/', { waitUntil: 'load' })
    
-  const pdf = await page.pdf({ format: 'a4' })
+  const pdf = await page.pdf({
+    format: 'a4',
+    printBackground: true,
+    margin:{
+      top: '1cm',
+      right: '1cm',
+      bottom: '1cm',
+      left: '1cm'
+    },
+  })
 
     await page.close()
     console.timeEnd('pdf-service');
